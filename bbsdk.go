@@ -71,6 +71,11 @@ func GetGameRecord(action, date, starttime, endtime, gametype, page, pagelimit s
 	return GET(url)
 }
 
+func GetBalance(username string) (xmap.M, error) {
+	url := fmt.Sprintf("%s%s?Username=%s", URL, GetBalanceURL, username)
+	return GET(url)
+}
+
 func AdjustDateByTimezone() string {
 	// 目标时区：GMT+4
 	loc, _ := time.LoadLocation("Etc/GMT+4")
