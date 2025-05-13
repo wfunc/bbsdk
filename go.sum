@@ -1,0 +1,4 @@
+github.com/wfunc/util v0.0.0-20241214111718-546afdabf3c8 h1:OywKNjhRRZOtxUbcsiS3ZCTLeg/4HVnAYWEgsU0WXLc=
+github.com/wfunc/util v0.0.0-20241214111718-546afdabf3c8/go.mod h1:Dpk9TW4iJuOcwBDar4tQUf+gxcVYzE7aBPkjMNLHFsY=
+golang.org/x/net v0.31.0 h1:68CPQngjLL0r2AlUKiSxtQFKvzRVbnzLwMUn5SzcLHo=
+golang.org/x/net v0.31.0/go.mod h1:P4fl1q7dY2hnZFxEk4pPSkDHF+QqjitcnDjUQyMM+pM=
