@@ -17,6 +17,7 @@ const (
 
 	CreateUserURL    = "/api/v2/createUser"
 	LoginURL         = "/api/v2/login"
+	LogoutURL        = "/api/v2/logout"
 	TransferURL      = "/api/v2/transfer"
 	GetGameRecordURL = "/api/v2/getGameRecord"
 	GetBalanceURL    = "/api/v2/getBalance"
@@ -73,6 +74,11 @@ func GetGameRecord(action, date, starttime, endtime, gametype, page, pagelimit s
 
 func GetBalance(username string) (xmap.M, error) {
 	url := fmt.Sprintf("%s%s?Username=%s", URL, GetBalanceURL, username)
+	return GET(url)
+}
+
+func Logout(username string) (xmap.M, error) {
+	url := fmt.Sprintf("%s%s?Username=%s", URL, LogoutURL, username)
 	return GET(url)
 }
 
