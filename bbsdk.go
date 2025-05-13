@@ -72,17 +72,17 @@ func GetGameRecord(action, date, starttime, endtime, gametype, page, pagelimit s
 }
 
 func AdjustDateByTimezone() string {
-	loc, _ := time.LoadLocation("Asia/Shanghai")
-	currentTime := time.Now().In(loc)
+	// 目标时区：GMT+4
+	loc, _ := time.LoadLocation("Etc/GMT+4")
 
-	_, offset := currentTime.Zone()
-	if offset == 8*3600 {
-		// 当前是东八区，减去 12 小时
-		adjustedTime := currentTime.Add(-8 * time.Hour)
-		return adjustedTime.Format("2006-01-02")
-	}
+	// 当前时间
+	currentTime := time.Now()
 
-	return currentTime.Format("2006-01-02")
+	// 转换为 GMT+4 时区时间
+	adjustedTime := currentTime.In(loc)
+
+	// 返回 GMT+4 时间格式化输出
+	return adjustedTime.Format("2006-01-02")
 }
 
 func Login(username string) string {
