@@ -24,6 +24,7 @@ const (
 	GetUserControlURL    = "/api/v2/getUserControl"
 	SetUserControlURL    = "/api/v2/setUserControl"
 	CancelUserControlURL = "/api/v2/cancelUserControl"
+	SetUserLimitURL      = "/api/v2/setUserLimit"
 	password             = "123"
 )
 
@@ -92,6 +93,11 @@ func SetUserControl(username, winRate, loseRate, tieRate, balance string) (xmap.
 
 func CancelUserControl(username string) (xmap.M, error) {
 	url := fmt.Sprintf("%s%s?Username=%s", URL, CancelUserControlURL, username)
+	return GET(url)
+}
+
+func SetUserLimit(username, btn, btx string) (xmap.M, error) {
+	url := fmt.Sprintf("%s%s?Username=%s&Btn=%s&Btx=%s", URL, SetUserLimitURL, username, btn, btx)
 	return GET(url)
 }
 
